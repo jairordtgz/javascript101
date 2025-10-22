@@ -28,7 +28,8 @@ const frameworks = [
  *    Referencia: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
  *   
  *    Extraiga los valores: nombre del framework, fecha de lanzamiento, número de usuarios y porcentaje de popularidad.
- *    Referencia: https://javascript.info/destructuring-assignment   
+ *    Referencia: https://javascript.info/destructuring-assignment 
+ *   
  * 
  *    Cree un objeto frameworkObj con las siguientes propiedades:
  *    - frameworkName
@@ -43,4 +44,18 @@ const frameworks = [
  *    LlamE a la función addRow pasando el objeto frameworkObj y el ID del cuerpo de la tabla "data-frameworks",
  *    para agregar una nueva fila con estos datos al cuerpo de la tabla HTML.
  */
+
+frameworks.forEach((frameworks) => {
+  const [frameworkName,releaseDate,usersName,popularityPercentage] = frameworks.split("|").map(info => info.trim());
+
+  const frameworkObj = {
+  frameworkName,
+  releaseDate,
+  usersName,
+  popularityPercentage
+  }
+
+  addRow(frameworkObj,"data-frameworks")
+
+}); 
 
